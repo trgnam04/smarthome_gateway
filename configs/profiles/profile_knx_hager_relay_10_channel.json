@@ -1,0 +1,32 @@
+{
+  "profile_id": "hager_txa_4_fold_relay",
+  "protocol": "knx",
+  "device_type": "actuator",
+  "description": "Bộ điều khiển 4 kênh Relay Hager",  
+  "interface_types": {
+    "relay_1_bit": {
+      "dpt": "1.001",
+      "data_length": 1,
+      "control": {
+        "status_on": { "apci": "GroupValueWrite", "value": 1 },
+        "status_off": { "apci": "GroupValueWrite", "value": 0 }
+      },
+      "controlled": {
+        "turn_on": { "apci": "GroupValueWrite", "value": 1 },
+        "turn_off": { "apci": "GroupValueWrite", "value": 0 }
+      }
+    }
+  },  
+  "endpoints": {
+    "ch_1": { "name": "Output 1", "type": "relay_1_bit" },
+    "ch_2": { "name": "Output 2", "type": "relay_1_bit" },
+    "ch_3": { "name": "Output 3", "type": "relay_1_bit" },
+    "ch_4": { "name": "Output 4", "type": "relay_1_bit" },
+    "ch_5": { "name": "Output 5", "type": "relay_1_bit" },
+    "ch_6": { "name": "Output 6", "type": "relay_1_bit" },
+    "ch_7": { "name": "Output 7", "type": "relay_1_bit" },
+    "ch_8": { "name": "Output 8", "type": "relay_1_bit" },
+    "ch_9": { "name": "Output 9", "type": "relay_1_bit" },
+    "ch_10": { "name": "Output 10", "type": "relay_1_bit" }
+  }
+}

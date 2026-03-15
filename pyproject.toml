@@ -1,0 +1,17 @@
+# smart-gateway/pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-gateway"
+version = "1.0.0"
+description = "IoT Semantic Gateway for KNX and RS485"
+dependencies = [
+    "fastapi",
+    "pyserial",
+    "pytest"
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

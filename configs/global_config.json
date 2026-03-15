@@ -1,0 +1,6 @@
+{
+  "gateway_info": {
+    "knx_physical_address": "1.1.250", 
+    "description": "Smart IoT Gateway"
+  }
+}

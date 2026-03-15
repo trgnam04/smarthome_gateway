@@ -1,0 +1,322 @@
+{
+  "profile_id": "rs485_relay_24_ch_v1",
+  "protocol": "rs485",
+  "device_type": "actuator",
+  "description": "Bộ điều khiển Rơ-le 24 kênh RS485 (Modbus RTU)",
+  "interface_types": {
+    "relay_ch_1": {
+      "dpt": "raw_hex",
+      "data_length": 0,      
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 00 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 00 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 00 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 00 00 00" }
+      }
+    },
+    "relay_ch_2": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 01 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 01 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 01 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 01 00 00" }
+      }
+    },
+    "relay_ch_3": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 02 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 02 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 02 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 02 00 00" }
+      }
+    },
+    "relay_ch_4": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 03 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 03 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 03 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 03 00 00" }
+      }
+    },
+    "relay_ch_5": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 04 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 04 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 04 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 04 00 00" }
+      }
+    },
+    "relay_ch_6": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 05 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 05 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 05 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 05 00 00" }
+      }
+    },
+    "relay_ch_7": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 06 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 06 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 06 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 06 00 00" }
+      }
+    },
+    "relay_ch_8": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 06 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 06 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 07 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 07 00 00" }
+      }
+    },
+    "relay_ch_9": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 08 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 08 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 08 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 08 00 00" }
+      }
+    },
+    "relay_ch_10": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 09 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 09 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 09 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 09 00 00" }
+      }
+    },
+    "relay_ch_11": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 0A FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 0A 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 0A FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 0A 00 00" }
+      }
+    },
+    "relay_ch_12": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 0B FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 0B 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 0B FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 0B 00 00" }
+      }
+    },
+    "relay_ch_13": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 0C FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 0C 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 0C FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 0C 00 00" }
+      }
+    },
+    "relay_ch_14": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 0D FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 0D 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 0D FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 0D 00 00" }
+      }
+    },
+    "relay_ch_15": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 0E FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 0E 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 0E FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 0E 00 00" }
+      }
+    },
+    "relay_ch_16": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 0F FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 0F 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 0F FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 0F 00 00" }
+      }
+    },
+    "relay_ch_17": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 10 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 10 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 10 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 10 00 00" }
+      }
+    },
+    "relay_ch_18": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 11 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 11 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 11 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 11 00 00" }
+      }
+    },
+    "relay_ch_19": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 12 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 12 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 12 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 12 00 00" }
+      }
+    },
+    "relay_ch_20": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 13 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 13 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 13 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 13 00 00" }
+      }
+    },
+    "relay_ch_21": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 14 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 14 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 14 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 14 00 00" }
+      }
+    },
+    "relay_ch_22": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 15 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 15 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 15 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 15 00 00" }
+      }
+    },
+    "relay_ch_23": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 16 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 16 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 16 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 16 00 00" }
+      }
+    },
+    "relay_ch_24": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "controll": {
+        "status_on": { "apci": "raw", "value": "05 00 17 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 17 00 00" }
+      },
+      "controlled": {
+        "turn_on": { "apci": "raw", "value": "05 00 17 FF 00" },
+        "turn_off": { "apci": "raw", "value": "05 00 17 00 00" }
+      }
+    }    
+  },
+  "endpoints": {
+    "ch_1": { "name": "Relay 1", "type": "relay_ch_1" },
+    "ch_2": { "name": "Relay 2", "type": "relay_ch_2" },
+    "ch_3": { "name": "Relay 3", "type": "relay_ch_3" },
+    "ch_4": { "name": "Relay 4", "type": "relay_ch_4" },
+    "ch_5": { "name": "Relay 5", "type": "relay_ch_5" },
+    "ch_6": { "name": "Relay 6", "type": "relay_ch_6" },
+    "ch_7": { "name": "Relay 7", "type": "relay_ch_7" },
+    "ch_8": { "name": "Relay 8", "type": "relay_ch_8" },
+    "ch_9": { "name": "Relay 9", "type": "relay_ch_9" },
+    "ch_10": { "name": "Relay 10", "type": "relay_ch_10" },
+    "ch_11": { "name": "Relay 11", "type": "relay_ch_11" },
+    "ch_12": { "name": "Relay 12", "type": "relay_ch_12" },
+    "ch_13": { "name": "Relay 13", "type": "relay_ch_13" },
+    "ch_14": { "name": "Relay 14", "type": "relay_ch_14" },
+    "ch_15": { "name": "Relay 15", "type": "relay_ch_15" },
+    "ch_16": { "name": "Relay 16", "type": "relay_ch_16" },
+    "ch_17": { "name": "Relay 17", "type": "relay_ch_17" },
+    "ch_18": { "name": "Relay 18", "type": "relay_ch_18" },
+    "ch_19": { "name": "Relay 19", "type": "relay_ch_19" },
+    "ch_20": { "name": "Relay 20", "type": "relay_ch_20" },
+    "ch_21": { "name": "Relay 21", "type": "relay_ch_21" },
+    "ch_22": { "name": "Relay 22", "type": "relay_ch_22" },
+    "ch_23": { "name": "Relay 23", "type": "relay_ch_23" },
+    "ch_24": { "name": "Relay 24", "type": "relay_ch_24" }    
+  }
+}
