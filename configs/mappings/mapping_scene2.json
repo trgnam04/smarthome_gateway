@@ -1,0 +1,44 @@
+{
+  "mappings": [    
+    {
+      "rule_id": "p1_b1_to_ch1",
+      "trigger": { "source_device": "panel_1", "event_name": "btn_1:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_1", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p1_b2_to_ch2",
+      "trigger": { "source_device": "panel_1", "event_name": "btn_2:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_2", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p1_b3_to_ch3",
+      "trigger": { "source_device": "panel_1", "event_name": "btn_3:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_3", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p1_b4_to_ch4",
+      "trigger": { "source_device": "panel_1", "event_name": "btn_4:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_4", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p2_b1_to_ch5",
+      "trigger": { "source_device": "panel_2", "event_name": "btn_1:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_5", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p2_b2_to_ch6",
+      "trigger": { "source_device": "panel_2", "event_name": "btn_2:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_6", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p2_b3_to_ch7",
+      "trigger": { "source_device": "panel_2", "event_name": "btn_3:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_7", "intent": "TOGGLE" }
+    },
+    {
+      "rule_id": "p2_b4_to_ch8",
+      "trigger": { "source_device": "panel_2", "event_name": "btn_4:pressed" },
+      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_8", "intent": "TOGGLE" }
+    }
+  ]
+}

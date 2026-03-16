@@ -1,0 +1,39 @@
+{
+  "relay_24_ch": {
+    "name": "Tủ Rơ-le điều khiển trung tâm 24 Kênh",
+    "profile_id": "rs485_relay_24_ch_v1",
+    "common_params": {
+      "device_id": "01"
+    },
+    "endpoints": {
+      "ch_1": {},
+      "ch_2": {},
+      "ch_3": {},
+      "ch_4": {},
+      "ch_5": {},
+      "ch_6": {},
+      "ch_7": {},
+      "ch_8": {}
+    }
+  },
+  "panel_1": {
+    "name": "Bảng nút nhấn Khu vực 1",
+    "profile_id": "rs485_niren_4_btn_v1",
+    "common_params": {
+      "device_id": "02"
+    },
+    "endpoints": {
+      "btn_1": {}, "btn_2": {}, "btn_3": {}, "btn_4": {}
+    }
+  },
+  "panel_2": {
+    "name": "Bảng nút nhấn Khu vực 2",
+    "profile_id": "rs485_niren_4_btn_v1",
+    "common_params": {
+      "device_id": "03"
+    },
+    "endpoints": {
+      "btn_1": {}, "btn_2": {}, "btn_3": {}, "btn_4": {}
+    }
+  }
+}

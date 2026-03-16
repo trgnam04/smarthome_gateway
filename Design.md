@@ -54,7 +54,7 @@ Nội dung:
 - Semantic Data là gì? -> phục vụ cho việc build gói tin trong KNX phần useful data
 - Interface Type -> quản lý triết lý định nghĩa thiết bị trong gateway bao gồm controll và controlled
 -> tuy nhiên chúng ta cần cải thiện lại cách hiện thực các method execution trong class device
-- Cần thêm việc check byte, crc ở gateway do từ EB tới gateway qua đường uart dữ liệu có thể bị nhiễu -> check ở gateway là tốt nhất
+- Cần thêm việc check byte, crc ở gateway do từ EB tới gateway qua đường uart dữ liệu có thể  bị nhiễu -> check ở gateway là tốt nhất
 
 Note: FLOW KHỞI TẠO MỘT THIẾT BỊ KNX HOẶC RS485 TRÊN GIAO DIỆN HỆ THỐNG
 Liên quan: Maybe cần chỉnh sửa class DeviceConfig lại cho phù hợp bao gồm trường dữ liệu và một số method hỗ trợ parse dữ liệu từ đường dẫn file json.

@@ -1,36 +1,52 @@
 # internal/devices/rs485_device.py
 
 from typing import List, Optional
-# Sử dụng absolute import theo chuẩn project
 from internal.models import Event, Command, Intent
 from .base_device import Device
 
 class RS485Device(Device):
+    
+    @staticmethod
+    def _match_hex_template(template: str, raw_hex: str) -> bool:
+        """
+        Hàm so khớp chuỗi Hex có hỗ trợ Wildcard 'XX'.
+        Ví dụ: template = "01 03 00 02 XX 02" sẽ khớp với raw_hex = "01 03 00 02 4A 02 8C 3A"
+        """
+        t_bytes = template.strip().split()
+        r_bytes = raw_hex.strip().split()
+        
+        # Nếu raw_hex thu được ngắn hơn template cơ bản -> Chắc chắn sai frame
+        if len(r_bytes) < len(t_bytes):
+            return False
+            
+        for t, r in zip(t_bytes, r_bytes):
+            # Nếu template là XX -> Bỏ qua, không check byte này
+            if t.upper() == "XX":
+                continue
+            # Nếu khác nhau -> Không khớp
+            if t.upper() != r.upper():
+                return False
+                
+        # Khớp toàn bộ các byte quan trọng (bỏ qua phần đuôi CRC dư thừa nếu có)
+        return True
+
     def process_incoming(self, raw_hex: str) -> List[Event]:
         events = []
         device_id = self.config.common_params.get("device_id", "")
 
-        # 1. Quét qua từng kênh (endpoint) vật lý đã khai báo trong Profile
         for ep_name, ep_def in self.profile.endpoints.items():
-            
-            # 2. Tìm Type logic (ngữ nghĩa) của kênh này
             iface_type = self.profile.interface_types.get(ep_def.type)
-            if not iface_type:
-                continue
+            if not iface_type: continue
             
-            # 3. Quét các sự kiện kích hoạt (control)
             for evt_name, semantic in iface_type.control.items():
+                # Ráp ID thiết bị vào đầu template. VD: "01" + "03 00 01 XX 02" -> "01 03 00 01 XX 02"
+                expected_template = f"{device_id} {semantic.value}"
                 
-                # Với RS485, value của SemanticData chứa chuỗi Hex tĩnh của thao tác
-                # Ta ghép Device ID vào đầu chuỗi để so khớp
-                expected_hex = f"{device_id} {semantic.value}"
-                
-                if expected_hex == raw_hex:
-                    events.append(Event(
-                        source_device=self.system_id,
-                        event_name=f"{ep_name}:{evt_name}", # Định dạng chuẩn: "btn_1:pressed"
-                        raw_payload=raw_hex
-                    ))
+                # SỬ DỤNG HÀM MATCHING MỚI THAY VÌ "=="
+                if self._match_hex_template(expected_template, raw_hex):
+                    # Nút nhấn chỉ feed Event cho Broker!
+                    events.append(Event(self.system_id, f"{ep_name}:{evt_name}", raw_hex))
+        
         return events
     
     def execute_action(self, command: Command) -> Optional[str]:

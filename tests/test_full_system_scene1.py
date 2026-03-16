@@ -31,7 +31,7 @@ def test_full_system_integration():
     dev_mgr.load_from_json_file("configs/devices/devices_scene1.json", all_profiles)
     
     mapping_engine = MappingEngine()
-    mapping_engine.load_from_json_file("configs/mapping_scene1.json")
+    mapping_engine.load_from_json_file("configs/mappings/mapping_scene1.json")
     
     # 3. Khởi tạo Broker và kết nối Hardware ảo
     broker = EventBroker(dev_mgr, mapping_engine)
