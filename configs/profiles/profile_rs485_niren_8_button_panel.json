@@ -3,14 +3,13 @@
   "protocol": "rs485",
   "device_type": "button_panel",
   "description": "Bảng nút nhấn thông minh NiRen 4 nút có đèn nền",
-  
   "interface_types": {
     "niren_button_1": {
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 02 02" },
-        "released": { "apci": "raw", "value": "03 00 02 02 00" }
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 01" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
         "turn_on_indicator": { "apci": "raw", "value": "06 10 21 00 01" },
@@ -21,8 +20,8 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 04 04" },
-        "released": { "apci": "raw", "value": "03 00 02 04 00" }
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 02" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
         "turn_on_indicator": { "apci": "raw", "value": "06 10 22 00 01" },
@@ -33,8 +32,8 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 08 08" },
-        "released": { "apci": "raw", "value": "03 00 02 08 00" }
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 04" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
         "turn_on_indicator": { "apci": "raw", "value": "06 10 23 00 01" },
@@ -45,8 +44,56 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 10 10" },
-        "released": { "apci": "raw", "value": "03 00 02 10 00" }
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 08" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
+      },
+      "controlled": {
+        "turn_on_indicator": { "apci": "raw", "value": "06 10 24 00 01" },
+        "turn_off_indicator": { "apci": "raw", "value": "06 10 24 00 00" }
+      }
+    },
+    "niren_button_5": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "control": {
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 10" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
+      },
+      "controlled": {
+        "turn_on_indicator": { "apci": "raw", "value": "06 10 21 00 01" },
+        "turn_off_indicator": { "apci": "raw", "value": "06 10 21 00 00" }
+      }
+    },
+    "niren_button_6": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "control": {
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 20" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
+      },
+      "controlled": {
+        "turn_on_indicator": { "apci": "raw", "value": "06 10 22 00 01" },
+        "turn_off_indicator": { "apci": "raw", "value": "06 10 22 00 00" }
+      }
+    },
+    "niren_button_7": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "control": {
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 40" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
+      },
+      "controlled": {
+        "turn_on_indicator": { "apci": "raw", "value": "06 10 23 00 01" },
+        "turn_off_indicator": { "apci": "raw", "value": "06 10 23 00 00" }
+      }
+    },
+    "niren_button_8": {
+      "dpt": "raw_hex",
+      "data_length": 0,
+      "control": {
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 80" },
+        "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
         "turn_on_indicator": { "apci": "raw", "value": "06 10 24 00 01" },
@@ -54,11 +101,14 @@
       }
     }
   },
-
   "endpoints": {
     "btn_1": { "name": "Nút số 1", "type": "niren_button_1" },
     "btn_2": { "name": "Nút số 2", "type": "niren_button_2" },
     "btn_3": { "name": "Nút số 3", "type": "niren_button_3" },
-    "btn_4": { "name": "Nút số 4", "type": "niren_button_4" }
+    "btn_4": { "name": "Nút số 4", "type": "niren_button_4" },
+    "btn_5": { "name": "Nút số 5", "type": "niren_button_5" },
+    "btn_6": { "name": "Nút số 6", "type": "niren_button_6" },
+    "btn_7": { "name": "Nút số 7", "type": "niren_button_7" },
+    "btn_8": { "name": "Nút số 8", "type": "niren_button_8" }
   }
 }

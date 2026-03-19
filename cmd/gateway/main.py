@@ -11,7 +11,8 @@ from internal.hal import GatewaySerialPort
 
 
 all_profiles = {
-        "rs485_niren_4_btn_v1": DeviceProfile.from_json_file("configs/profiles/profile_rs485_niren_4_button_panel.json"),        
+        "rs485_niren_4_btn_v1": DeviceProfile.from_json_file("configs/profiles/profile_rs485_niren_4_button_panel.json"),   
+        "rs485_niren_8_btn_v1": DeviceProfile.from_json_file("configs/profiles/profile_rs485_niren_8_button_panel.json"),        
         "rs485_relay_24_ch_v1": DeviceProfile.from_json_file("configs/profiles/profile_rs485_corx_relay_24_channel.json")
     }
 

@@ -7,7 +7,7 @@
     "relay_ch_1": {
       "dpt": "raw_hex",
       "data_length": 0,      
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 00 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 00 00 00" }
       },
@@ -19,7 +19,7 @@
     "relay_ch_2": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 01 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 01 00 00" }
       },
@@ -31,7 +31,7 @@
     "relay_ch_3": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 02 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 02 00 00" }
       },
@@ -43,7 +43,7 @@
     "relay_ch_4": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 03 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 03 00 00" }
       },
@@ -55,7 +55,7 @@
     "relay_ch_5": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 04 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 04 00 00" }
       },
@@ -67,7 +67,7 @@
     "relay_ch_6": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 05 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 05 00 00" }
       },
@@ -79,7 +79,7 @@
     "relay_ch_7": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 06 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 06 00 00" }
       },
@@ -91,7 +91,7 @@
     "relay_ch_8": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 06 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 06 00 00" }
       },
@@ -103,7 +103,7 @@
     "relay_ch_9": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 08 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 08 00 00" }
       },
@@ -115,7 +115,7 @@
     "relay_ch_10": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 09 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 09 00 00" }
       },
@@ -127,7 +127,7 @@
     "relay_ch_11": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 0A FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 0A 00 00" }
       },
@@ -139,7 +139,7 @@
     "relay_ch_12": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 0B FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 0B 00 00" }
       },
@@ -151,7 +151,7 @@
     "relay_ch_13": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 0C FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 0C 00 00" }
       },
@@ -163,7 +163,7 @@
     "relay_ch_14": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 0D FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 0D 00 00" }
       },
@@ -175,7 +175,7 @@
     "relay_ch_15": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 0E FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 0E 00 00" }
       },
@@ -187,7 +187,7 @@
     "relay_ch_16": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 0F FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 0F 00 00" }
       },
@@ -199,7 +199,7 @@
     "relay_ch_17": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 10 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 10 00 00" }
       },
@@ -211,7 +211,7 @@
     "relay_ch_18": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 11 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 11 00 00" }
       },
@@ -223,7 +223,7 @@
     "relay_ch_19": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 12 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 12 00 00" }
       },
@@ -235,7 +235,7 @@
     "relay_ch_20": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 13 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 13 00 00" }
       },
@@ -247,7 +247,7 @@
     "relay_ch_21": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 14 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 14 00 00" }
       },
@@ -259,7 +259,7 @@
     "relay_ch_22": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 15 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 15 00 00" }
       },
@@ -271,7 +271,7 @@
     "relay_ch_23": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 16 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 16 00 00" }
       },
@@ -283,7 +283,7 @@
     "relay_ch_24": {
       "dpt": "raw_hex",
       "data_length": 0,
-      "controll": {
+      "control": {
         "status_on": { "apci": "raw", "value": "05 00 17 FF 00" },
         "status_off": { "apci": "raw", "value": "05 00 17 00 00" }
       },

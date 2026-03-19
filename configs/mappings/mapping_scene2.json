@@ -1,44 +1,40 @@
 {
   "mappings": [    
-    {
-      "rule_id": "p1_b1_to_ch1",
-      "trigger": { "source_device": "panel_1", "event_name": "btn_1:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_1", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p1_b2_to_ch2",
-      "trigger": { "source_device": "panel_1", "event_name": "btn_2:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_2", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p1_b3_to_ch3",
-      "trigger": { "source_device": "panel_1", "event_name": "btn_3:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_3", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p1_b4_to_ch4",
-      "trigger": { "source_device": "panel_1", "event_name": "btn_4:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_4", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p2_b1_to_ch5",
-      "trigger": { "source_device": "panel_2", "event_name": "btn_1:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_5", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p2_b2_to_ch6",
-      "trigger": { "source_device": "panel_2", "event_name": "btn_2:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_6", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p2_b3_to_ch7",
-      "trigger": { "source_device": "panel_2", "event_name": "btn_3:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_7", "intent": "TOGGLE" }
-    },
-    {
-      "rule_id": "p2_b4_to_ch8",
-      "trigger": { "source_device": "panel_2", "event_name": "btn_4:pressed" },
-      "action": { "target_device": "relay_24_ch", "target_endpoint": "ch_8", "intent": "TOGGLE" }
-    }
+    { "rule_id": "p4_b1_tgl_ch1", "trigger": { "source_device": "panel_4", "event_name": "btn_1:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_1", "intent": "TOGGLE" } },
+    { "rule_id": "p4_b2_tgl_ch2", "trigger": { "source_device": "panel_4", "event_name": "btn_2:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_2", "intent": "TOGGLE" } },
+    { "rule_id": "p4_b3_tgl_ch3", "trigger": { "source_device": "panel_4", "event_name": "btn_3:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_3", "intent": "TOGGLE" } },
+    { "rule_id": "p4_b4_tgl_ch4", "trigger": { "source_device": "panel_4", "event_name": "btn_4:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_4", "intent": "TOGGLE" } },
+    { "rule_id": "ch1_on_p4_b1", "trigger": { "source_device": "relay_24", "event_name": "ch_1:status_on" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_1", "intent": "TURN_ON" } },
+    { "rule_id": "ch2_on_p4_b2", "trigger": { "source_device": "relay_24", "event_name": "ch_2:status_on" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_2", "intent": "TURN_ON" } },
+    { "rule_id": "ch3_on_p4_b3", "trigger": { "source_device": "relay_24", "event_name": "ch_3:status_on" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_3", "intent": "TURN_ON" } },
+    { "rule_id": "ch4_on_p4_b4", "trigger": { "source_device": "relay_24", "event_name": "ch_4:status_on" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_4", "intent": "TURN_ON" } },
+    { "rule_id": "ch1_off_p4_b1", "trigger": { "source_device": "relay_24", "event_name": "ch_1:status_off" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_1", "intent": "TURN_OFF" } },
+    { "rule_id": "ch2_off_p4_b2", "trigger": { "source_device": "relay_24", "event_name": "ch_2:status_off" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_2", "intent": "TURN_OFF" } },
+    { "rule_id": "ch3_off_p4_b3", "trigger": { "source_device": "relay_24", "event_name": "ch_3:status_off" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_3", "intent": "TURN_OFF" } },
+    { "rule_id": "ch4_off_p4_b4", "trigger": { "source_device": "relay_24", "event_name": "ch_4:status_off" }, "action": { "target_device": "panel_4", "target_endpoint": "btn_4", "intent": "TURN_OFF" } },
+    { "rule_id": "p8_b1_tgl_ch5", "trigger": { "source_device": "panel_8", "event_name": "btn_1:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_5", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b2_tgl_ch6", "trigger": { "source_device": "panel_8", "event_name": "btn_2:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_6", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b3_tgl_ch7", "trigger": { "source_device": "panel_8", "event_name": "btn_3:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_7", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b4_tgl_ch8", "trigger": { "source_device": "panel_8", "event_name": "btn_4:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_8", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b5_tgl_ch9", "trigger": { "source_device": "panel_8", "event_name": "btn_5:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_9", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b6_tgl_ch10", "trigger": { "source_device": "panel_8", "event_name": "btn_6:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_10", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b7_tgl_ch11", "trigger": { "source_device": "panel_8", "event_name": "btn_7:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_11", "intent": "TOGGLE" } },
+    { "rule_id": "p8_b8_tgl_ch12", "trigger": { "source_device": "panel_8", "event_name": "btn_8:pressed" }, "action": { "target_device": "relay_24", "target_endpoint": "ch_12", "intent": "TOGGLE" } },
+    { "rule_id": "ch5_on_p8_b1", "trigger": { "source_device": "relay_24", "event_name": "ch_5:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_1", "intent": "TURN_ON" } },
+    { "rule_id": "ch6_on_p8_b2", "trigger": { "source_device": "relay_24", "event_name": "ch_6:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_2", "intent": "TURN_ON" } },
+    { "rule_id": "ch7_on_p8_b3", "trigger": { "source_device": "relay_24", "event_name": "ch_7:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_3", "intent": "TURN_ON" } },
+    { "rule_id": "ch8_on_p8_b4", "trigger": { "source_device": "relay_24", "event_name": "ch_8:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_4", "intent": "TURN_ON" } },
+    { "rule_id": "ch9_on_p8_b5", "trigger": { "source_device": "relay_24", "event_name": "ch_9:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_5", "intent": "TURN_ON" } },
+    { "rule_id": "ch10_on_p8_b6", "trigger": { "source_device": "relay_24", "event_name": "ch_10:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_6", "intent": "TURN_ON" } },
+    { "rule_id": "ch11_on_p8_b7", "trigger": { "source_device": "relay_24", "event_name": "ch_11:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_7", "intent": "TURN_ON" } },
+    { "rule_id": "ch12_on_p8_b8", "trigger": { "source_device": "relay_24", "event_name": "ch_12:status_on" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_8", "intent": "TURN_ON" } },
+    { "rule_id": "ch5_off_p8_b1", "trigger": { "source_device": "relay_24", "event_name": "ch_5:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_1", "intent": "TURN_OFF" } },
+    { "rule_id": "ch6_off_p8_b2", "trigger": { "source_device": "relay_24", "event_name": "ch_6:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_2", "intent": "TURN_OFF" } },
+    { "rule_id": "ch7_off_p8_b3", "trigger": { "source_device": "relay_24", "event_name": "ch_7:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_3", "intent": "TURN_OFF" } },
+    { "rule_id": "ch8_off_p8_b4", "trigger": { "source_device": "relay_24", "event_name": "ch_8:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_4", "intent": "TURN_OFF" } },
+    { "rule_id": "ch9_off_p8_b5", "trigger": { "source_device": "relay_24", "event_name": "ch_9:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_5", "intent": "TURN_OFF" } },
+    { "rule_id": "ch10_off_p8_b6", "trigger": { "source_device": "relay_24", "event_name": "ch_10:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_6", "intent": "TURN_OFF" } },
+    { "rule_id": "ch11_off_p8_b7", "trigger": { "source_device": "relay_24", "event_name": "ch_11:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_7", "intent": "TURN_OFF" } },
+    { "rule_id": "ch12_off_p8_b8", "trigger": { "source_device": "relay_24", "event_name": "ch_12:status_off" }, "action": { "target_device": "panel_8", "target_endpoint": "btn_8", "intent": "TURN_OFF" } }
   ]
 }

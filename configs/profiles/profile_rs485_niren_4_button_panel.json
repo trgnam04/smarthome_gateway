@@ -8,7 +8,7 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 XX 02" },
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 01" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
@@ -20,7 +20,7 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 XX 04" },
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 02" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
@@ -32,7 +32,7 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 XX 08" },
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 04" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
@@ -44,7 +44,7 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "pressed": { "apci": "raw", "value": "03 00 02 XX 10" },
+        "pressed": { "apci": "raw", "value": "03 00 02 XX 08" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {

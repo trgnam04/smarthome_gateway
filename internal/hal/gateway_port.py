@@ -42,26 +42,55 @@ class GatewaySerialPort:
     # LUỒNG NHẬN DỮ LIỆU (RX FLOW)
     # =======================================================
     def _read_loop(self):
-        """Vòng lặp gom frame từ đường truyền vật lý"""
-        while self.is_running:
-            if self.serial_conn and self.serial_conn.in_waiting > 0:
-                # Đọc toàn bộ buffer có sẵn (Đã được gom nhờ timeout của pyserial)
-                raw_bytes = self.serial_conn.read(self.serial_conn.in_waiting)
-                if not raw_bytes:
+            """
+            Vòng lặp gom frame dựa trên khoảng lặng (Inter-character timeout).
+            Cơ chế: Nếu có dữ liệu, đọc liên tục cho đến khi im lặng đủ lâu.
+            """
+            while self.is_running:
+                if not self.serial_conn:
+                    time.sleep(1)
                     continue
+
+                # 1. Đọc byte đầu tiên (Hàm này sẽ chặn cho đến khi có dữ liệu hoặc timeout)
+                # Lưu ý: timeout của serial_conn nên để khoảng 0.05 (50ms)
+                first_byte = self.serial_conn.read(1)
                 
-                # 1. PHÂN LOẠI GÓI TIN (Hàm do bạn tự hiện thực)
-                protocol = self._detect_protocol(raw_bytes)
+                if first_byte:
+                    # Đã bắt được đầu dây, bắt đầu gom hàng
+                    frame = first_byte
+                    
+                    while True:
+                        # Đọc tiếp những gì còn lại trong buffer
+                        # Nếu thiết bị đang truyền dở, in_waiting sẽ > 0
+                        waiting = self.serial_conn.in_waiting
+                        if waiting > 0:
+                            frame += self.serial_conn.read(waiting)
+                            # Sau khi đọc xong, tiếp tục vòng lặp while True để check tiếp
+                            continue
+                        
+                        # Nếu in_waiting == 0, nghỉ một chút cực ngắn để đợi byte tiếp theo (nếu có)
+                        # Khoảng nghỉ này nên nhỏ hơn timeout tổng (ví dụ 10ms)
+                        time.sleep(0.01)
+                        
+                        # Check lại lần cuối sau khi nghỉ, nếu vẫn không có gì -> Hết gói
+                        if self.serial_conn.in_waiting == 0:
+                            break
+                    
+                    # 2. Đã gom đủ 1 "cục" dữ liệu liền mạch
+                    self._handle_raw_frame(frame)
                 
-                # 2. XỬ LÝ THEO GIAO THỨC
-                if protocol == Protocol.KNX:
-                    self._process_knx_rx(raw_bytes)
-                elif protocol == Protocol.RS485:
-                    self._process_rs485_rx(raw_bytes)
-                else:
-                    print(f"[HAL] Gói tin không xác định, bỏ qua: {raw_bytes.hex(' ')}")
-            
-            time.sleep(0.01) # Tránh ăn 100% CPU
+                # Không cần time.sleep(0.01) ở đây nữa vì self.serial_conn.read(1) 
+                # đã đóng vai trò "nghỉ" chờ dữ liệu rồi (tránh ăn CPU).
+
+    def _handle_raw_frame(self, frame: bytes):
+        """Tách riêng logic xử lý frame sau khi đã gom đủ"""
+        protocol = self._detect_protocol(frame)
+        if protocol == Protocol.KNX:
+            self._process_knx_rx(frame)
+        elif protocol == Protocol.RS485:
+            self._process_rs485_rx(frame)
+        else:
+            print(f"[HAL] Gói tin không xác định: {frame.hex(' ').upper()}")
 
     def _detect_protocol(self, frame: bytes) -> Optional[Protocol]:
         """
@@ -100,7 +129,8 @@ class GatewaySerialPort:
             if self.rx_callback:
                 self.rx_callback(Protocol.RS485, hex_str)
         else:
-            print("[HAL] Lỗi CRC RS485! Gói tin bị drop.")
+            hex_str = payload.hex(" ").upper()
+            print(f"[HAL] Lỗi CRC RS485! Gói tin bị drop: {hex_str}")
 
     # =======================================================
     # LUỒNG GỬI DỮ LIỆU (TX FLOW)
@@ -129,8 +159,9 @@ class GatewaySerialPort:
                 return
 
             # Gửi ra đường bus vật lý
+            time.sleep(0.01)
             self.serial_conn.write(frame_to_send)
-            # print(f"[HAL] TX ({protocol.name}): {frame_to_send.hex(' ').upper()}")
+            print(f"[HAL] TX ({protocol.name}): {frame_to_send.hex(' ').upper()}")
 
         except ValueError as e:
             print(f"[HAL] Lỗi parse chuỗi Hex: {e}")

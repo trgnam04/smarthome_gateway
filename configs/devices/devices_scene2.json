@@ -1,9 +1,9 @@
 {
-  "relay_24_ch": {
+  "relay_24": {
     "name": "Tủ Rơ-le điều khiển trung tâm 24 Kênh",
     "profile_id": "rs485_relay_24_ch_v1",
     "common_params": {
-      "device_id": "01"
+      "device_id": "02"
     },
     "endpoints": {
       "ch_1": {},
@@ -13,27 +13,31 @@
       "ch_5": {},
       "ch_6": {},
       "ch_7": {},
-      "ch_8": {}
+      "ch_8": {},
+      "ch_9": {},
+      "ch_10": {},
+      "ch_11": {},
+      "ch_12": {}
     }
   },
-  "panel_1": {
+  "panel_4": {
     "name": "Bảng nút nhấn Khu vực 1",
-    "profile_id": "rs485_niren_4_btn_v1",
-    "common_params": {
-      "device_id": "02"
-    },
-    "endpoints": {
-      "btn_1": {}, "btn_2": {}, "btn_3": {}, "btn_4": {}
-    }
-  },
-  "panel_2": {
-    "name": "Bảng nút nhấn Khu vực 2",
     "profile_id": "rs485_niren_4_btn_v1",
     "common_params": {
       "device_id": "03"
     },
     "endpoints": {
       "btn_1": {}, "btn_2": {}, "btn_3": {}, "btn_4": {}
+    }
+  },
+  "panel_8": {
+    "name": "Bảng nút nhấn Khu vực 2",
+    "profile_id": "rs485_niren_8_btn_v1",
+    "common_params": {
+      "device_id": "01"
+    },
+    "endpoints": {
+      "btn_1": {}, "btn_2": {}, "btn_3": {}, "btn_4": {}, "btn_5": {}, "btn_6": {}, "btn_7": {}, "btn_8": {}
     }
   }
 }
