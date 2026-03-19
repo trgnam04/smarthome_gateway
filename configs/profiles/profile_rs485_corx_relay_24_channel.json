@@ -92,8 +92,8 @@
       "dpt": "raw_hex",
       "data_length": 0,
       "control": {
-        "status_on": { "apci": "raw", "value": "05 00 06 FF 00" },
-        "status_off": { "apci": "raw", "value": "05 00 06 00 00" }
+        "status_on": { "apci": "raw", "value": "05 00 07 FF 00" },
+        "status_off": { "apci": "raw", "value": "05 00 07 00 00" }
       },
       "controlled": {
         "turn_on": { "apci": "raw", "value": "05 00 07 FF 00" },

@@ -5,100 +5,100 @@
   "description": "Bảng nút nhấn thông minh NiRen 4 nút có đèn nền",
   "interface_types": {
     "niren_button_1": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 01" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 21 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 21 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 0 
+      }      
     },
     "niren_button_2": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 02" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 22 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 22 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 1 
+      }      
     },
     "niren_button_3": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 04" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 23 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 23 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 2 
+      }      
     },
     "niren_button_4": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 08" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 24 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 24 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 3 
+      }      
     },
     "niren_button_5": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 10" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 21 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 21 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 4 
+      }      
     },
     "niren_button_6": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 20" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 22 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 22 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 5 
+      }      
     },
     "niren_button_7": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 40" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 23 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 23 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 6 
+      }      
     },
     "niren_button_8": {
-      "dpt": "raw_hex",
+      "dpt": "modbus_bitmask",
       "data_length": 0,
       "control": {
         "pressed": { "apci": "raw", "value": "03 00 02 XX 80" },
         "released": { "apci": "raw", "value": "03 00 02 XX 00" }
       },
       "controlled": {
-        "turn_on_indicator": { "apci": "raw", "value": "06 10 24 00 01" },
-        "turn_off_indicator": { "apci": "raw", "value": "06 10 24 00 00" }
-      }
+        "base_frame": "06 10 08 01", 
+        "bit_index": 7 
+      }      
     }
   },
   "endpoints": {

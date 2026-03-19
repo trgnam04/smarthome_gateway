@@ -60,27 +60,55 @@ class RS485Device(Device):
         if not iface_type: return None
 
         intent = command.intent
-        # Xử lý Logic Toggle bằng cách đọc State hiện tại
-        if intent == Intent.TOGGLE:
-            current_val = self.state_manager.get_state_value(ep_name)
-            intent = Intent.TURN_OFF if current_val == 1 else Intent.TURN_ON
-
-        target_semantic = None
+        
+        # 1. CẬP NHẬT TRẠNG THÁI LÊN RAM (Optimistic Update)
         new_state_val = None
-
         if intent == Intent.TURN_ON:
-            target_semantic = iface_type.controlled.get("turn_on") or iface_type.controlled.get("turn_on_indicator")
             new_state_val = 1
         elif intent == Intent.TURN_OFF:
-            target_semantic = iface_type.controlled.get("turn_off") or iface_type.controlled.get("turn_off_indicator")
             new_state_val = 0
+        elif intent == Intent.TOGGLE:
+            current_val = self.state_manager.get_state_value(ep_name)
+            new_state_val = 0 if current_val == 1 else 1
+
+        if new_state_val is not None:
+            self.state_manager.update_state(ep_name, new_state_val)
+
+        # ==========================================================
+        # 2. STRATEGY 1: XỬ LÝ DPT BITMASK (Cho các thiết bị như LED Panel)
+        # ==========================================================
+        if iface_type.dpt == "modbus_bitmask":
+            base_frame = iface_type.base_frame
+            if not base_frame: return None
+            
+            # Quét toàn bộ các kênh của thiết bị này để gom bitmask
+            mask_value = 0
+            for iter_ep_name, iter_ep_def in self.profile.endpoints.items():
+                iter_iface = self.profile.interface_types.get(iter_ep_def.type)
+                
+                # Nếu kênh này cũng thuộc loại bitmask và xài chung base_frame
+                if iter_iface and iter_iface.dpt == "modbus_bitmask" and iter_iface.base_frame == base_frame:
+                    bit_idx = iter_iface.bit_index
+                    if bit_idx is not None:
+                        # Đọc trạng thái hiện tại từ StateManager
+                        state_val = self.state_manager.get_state_value(iter_ep_name) or 0
+                        # Dịch bit và cộng dồn vào mask_value
+                        mask_value |= (state_val << bit_idx)
+            
+            # Ráp thành chuỗi lệnh hoàn chỉnh: ID + Base Frame + Mask Byte
+            # Ví dụ: "01" + "06 10 08 01" + "05" -> "01 06 10 08 01 05"
+            return f"{device_id} {base_frame} {mask_value:02X}"
+
+        # ==========================================================
+        # 3. STRATEGY 2: XỬ LÝ DPT RAW_HEX TĨNH (Như Rơ-le RS485 cũ)
+        # ==========================================================
+        target_semantic = None
+        if new_state_val == 1:
+            target_semantic = iface_type.controlled.get("turn_on") or iface_type.controlled.get("turn_on_indicator")
+        elif new_state_val == 0:
+            target_semantic = iface_type.controlled.get("turn_off") or iface_type.controlled.get("turn_off_indicator")
             
         if target_semantic and target_semantic.value:
-            # OPTIMISTIC UPDATE: Cập nhật state nội bộ ngay khi xuất lệnh 
-            # (Phù hợp với đặc thù giao thức RS485)
-            if new_state_val is not None:
-                self.state_manager.update_state(ep_name, new_state_val)
-                
             return f"{device_id} {target_semantic.value}"
             
         return None
